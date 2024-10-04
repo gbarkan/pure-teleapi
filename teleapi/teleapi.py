@@ -2402,7 +2402,7 @@ class CallbackQuery(BaseModel):
     id: str
     """ Unique identifier for this query """
 
-    from_: 'User'
+    from_: Optional['User'] = Field(None, alias="from")
     """ Sender """
 
     chat_instance: str
@@ -3826,7 +3826,7 @@ class InlineQuery(BaseModel):
     id: str
     """ Unique identifier for this query """
 
-    from_: 'User'
+    from_: Optional['User'] = Field(None, alias="from")
     """ Sender """
 
     query: str
